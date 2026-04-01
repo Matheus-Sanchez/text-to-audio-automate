@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+data/processando/
+data/temp/
+data/logs/
+data/saida_audio/
+data/saida_sync/

@@ -1,0 +1,53 @@
+projeto:
+  nome: article_to_audio
+  versao: "0.1.0"
+
+caminhos:
+  base: "."
+  entrada: "data/entrada"
+  processando: "data/processando"
+  concluidos: "data/concluidos"
+  falhas: "data/falhas"
+  saida_audio: "data/saida_audio"
+  saida_sync: "data/saida_sync"
+  temp: "data/temp"
+  logs: "data/logs"
+
+banco:
+  caminho: "db/app.db"
+
+tesseract:
+  executavel: "C:/Program Files/Tesseract-OCR/tesseract.exe"
+  idioma: "por"
+  confianca_minima: 70
+  fallback_chars_minimos: 80
+
+llm:
+  url_base: "http://localhost:1234/v1"
+  model: ""
+  api_key: "lm-studio"
+  timeout_segundos: 120
+  contexto_maximo: 8192
+  chunk_chars: 3500
+  overlap_chars: 250
+  temperatura_padrao: 0.2
+
+tts:
+  enabled: false
+  provider: "disabled"
+  output_format: "mp3"
+  settings: {}
+
+notificacoes:
+  canal_ntfy: ""
+  url_ntfy: "https://ntfy.sh"
+  ativo: false
+
+worker:
+  max_retries_por_job: 3
+  extensoes_aceitas:
+    - ".pdf"
+    - ".txt"
+    - ".md"
+    - ".docx"
+    - ".epub"

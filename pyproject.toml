@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "article-to-audio"
+version = "0.1.0"
+description = "Pipeline local para converter documentos em texto limpo e audio com LM Studio e Piper."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12.0",
+  "ebooklib>=0.18",
+  "fastapi>=0.110.0",
+  "openai>=1.0.0",
+  "pillow>=10.0.0",
+  "pydub>=0.25.1",
+  "pymupdf>=1.24.0",
+  "pymupdf4llm>=0.0.15",
+  "python-docx>=1.1.0",
+  "python-dotenv>=1.0.0",
+  "pytesseract>=0.3.10",
+  "pyyaml>=6.0.1",
+  "requests>=2.31.0",
+  "rich>=13.7.0",
+  "uvicorn>=0.29.0",
+  "watchdog>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

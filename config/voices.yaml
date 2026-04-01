@@ -1,0 +1,9 @@
+vozes:
+  padrao:
+    provider: "disabled"
+    descricao: "Placeholder ate a escolha do TTS"
+  por_tipo:
+    academico: "padrao"
+    corporativo: "padrao"
+    livro: "padrao"
+    simples: "padrao"
