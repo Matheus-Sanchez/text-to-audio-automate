@@ -36,8 +36,8 @@ class Publisher:
         local_package.mkdir(parents=True, exist_ok=True)
 
         copied_artifacts: dict[str, Path] = {}
-        copied_artifacts["texto_limpo.md"] = self._copy_artifact(clean_text_path, local_package / "texto_limpo.md")
-        copied_artifacts["resumo.md"] = self._copy_artifact(summary_path, local_package / "resumo.md")
+        copied_artifacts["texto_limpo.txt"] = self._copy_artifact(clean_text_path, local_package / "texto_limpo.txt")
+        copied_artifacts["resumo.txt"] = self._copy_artifact(summary_path, local_package / "resumo.txt")
         copied_artifacts["job.log"] = self._copy_artifact(log_path, local_package / "job.log")
 
         for artifact in tts_artifacts:

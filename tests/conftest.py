@@ -24,6 +24,7 @@ def write_config_bundle(root: Path) -> None:
             caminhos:
               base: "."
               entrada: "data/entrada"
+              fonte_artigos: ""
               processando: "data/processando"
               concluidos: "data/concluidos"
               falhas: "data/falhas"
@@ -85,6 +86,10 @@ def write_config_bundle(root: Path) -> None:
                 Limpe o trecho.
               resumo: |
                 Resuma o texto.
+              resumo_parcial: |
+                Resuma a parte.
+              resumo_consolidado: |
+                Consolide os resumos.
             """
         ).strip(),
         encoding="utf-8",

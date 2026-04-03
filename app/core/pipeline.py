@@ -236,7 +236,7 @@ class PipelineRunner:
         return normalized_path
 
     def _ensure_clean_text(self, job_id: int, extracted_doc: ExtractedDocument, normalized_path: Path, artifacts_dir: Path) -> Path:
-        clean_text_path = artifacts_dir / "texto_limpo.md"
+        clean_text_path = artifacts_dir / "texto_limpo.txt"
         if not clean_text_path.exists():
             normalized_text = normalized_path.read_text(encoding="utf-8")
             clean_text = self.llm_client.generate_clean_text(
@@ -250,7 +250,7 @@ class PipelineRunner:
         return clean_text_path
 
     def _ensure_summary(self, job_id: int, clean_text_path: Path, artifacts_dir: Path) -> Path:
-        summary_path = artifacts_dir / "resumo.md"
+        summary_path = artifacts_dir / "resumo.txt"
         if not summary_path.exists():
             summary = self.llm_client.generate_summary(clean_text_path.read_text(encoding="utf-8"))
             summary_path.write_text(summary, encoding="utf-8")

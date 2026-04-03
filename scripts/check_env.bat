@@ -1,4 +1,4 @@
 @echo off
 cd /d %~dp0..
-python check_setup.py
+py -3.11 check_setup.py
 pause

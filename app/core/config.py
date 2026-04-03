@@ -25,6 +25,7 @@ class ProjectConfig:
 class PathsConfig:
     base: Path
     entrada: Path
+    fonte_artigos: Path | None
     processando: Path
     concluidos: Path
     falhas: Path
@@ -128,6 +129,11 @@ def load_settings(project_root: Path | None = None) -> AppSettings:
         paths=PathsConfig(
             base=base,
             entrada=_expand_path(app_raw["caminhos"]["entrada"], base),
+            fonte_artigos=(
+                _expand_path(str(app_raw["caminhos"].get("fonte_artigos", "")).strip(), base)
+                if str(app_raw["caminhos"].get("fonte_artigos", "")).strip()
+                else None
+            ),
             processando=_expand_path(app_raw["caminhos"]["processando"], base),
             concluidos=_expand_path(app_raw["caminhos"]["concluidos"], base),
             falhas=_expand_path(app_raw["caminhos"]["falhas"], base),

@@ -5,6 +5,7 @@ projeto:
 caminhos:
   base: "."
   entrada: "data/entrada"
+  fonte_artigos: "C:/Users/matheus.sduda/Meu Drive/TCC (1)"
   processando: "data/processando"
   concluidos: "data/concluidos"
   falhas: "data/falhas"
@@ -24,9 +25,9 @@ tesseract:
 
 llm:
   url_base: "http://localhost:1234/v1"
-  model: ""
+  model: "mistralai/ministral-3-14b-reasoning"
   api_key: "lm-studio"
-  timeout_segundos: 120
+  timeout_segundos: 480
   contexto_maximo: 8192
   chunk_chars: 3500
   overlap_chars: 250

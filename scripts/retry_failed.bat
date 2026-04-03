@@ -1,4 +1,4 @@
 @echo off
 cd /d %~dp0..
-python -m app.cli.retry --failed
+py -3.11 -m app.cli.retry --failed
 pause

@@ -84,6 +84,11 @@ if settings is not None:
     print(f"\n{NEGRITO}[ Configuracao ]{RESET}")
     ok("Projeto", settings.project.name)
     ok("Base", str(settings.paths.base))
+    if settings.paths.fonte_artigos is not None:
+        if settings.paths.fonte_artigos.exists():
+            ok("Fonte de artigos", str(settings.paths.fonte_artigos))
+        else:
+            warn("Fonte de artigos", f"pasta configurada nao encontrada: {settings.paths.fonte_artigos}")
     for directory in (
         settings.paths.entrada,
         settings.paths.processando,

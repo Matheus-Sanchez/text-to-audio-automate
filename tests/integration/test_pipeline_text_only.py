@@ -32,7 +32,7 @@ def test_pipeline_text_only_publish(tmp_path) -> None:
     published = list(settings.paths.saida_sync.iterdir())
     assert len(published) == 1
     package = published[0]
-    assert (package / "texto_limpo.md").exists()
-    assert (package / "resumo.md").exists()
+    assert (package / "texto_limpo.txt").exists()
+    assert (package / "resumo.txt").exists()
     assert (package / "manifest.json").exists()
     assert (package / "job.log").exists()

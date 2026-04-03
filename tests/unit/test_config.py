@@ -7,5 +7,6 @@ def test_load_settings_resolves_paths(tmp_path) -> None:
     write_config_bundle(tmp_path)
     settings = load_settings(tmp_path)
     assert settings.paths.entrada.exists()
+    assert settings.paths.fonte_artigos is None
     assert settings.tts.enabled is False
     assert settings.llm.model is None

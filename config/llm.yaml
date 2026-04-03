@@ -15,14 +15,26 @@ prompts:
     Se o documento nao estiver em portugues, traduza para PT-BR.
     Quando encontrar figuras, tabelas ou graficos relevantes, substitua por uma descricao curta e objetiva adequada para leitura em voz.
     Remova bibliografia, indices, cabecalhos repetidos, rodapes, notas de paginacao e referencias finais.
+    Retorne apenas texto puro, sem markdown, sem listas, sem cercas de codigo e sem titulos com #.
     Nunca invente dados. Nao inclua comentarios sobre o seu processo.
 
   leitura_integral: |
     Reescreva o trecho abaixo como texto fluido para narracao integral.
     Preserve fatos, argumentos, exemplos e descricoes essenciais de tabelas e graficos.
     Use frases bem pronunciaveis para TTS.
+    Entregue somente texto corrido em formato .txt.
 
   resumo: |
     Crie um resumo entre 200 e 400 palavras em PT-BR, claro e direto.
     Mantenha problema, contexto, resultados e conclusoes principais.
     O texto deve soar natural quando lido em voz alta.
+    Entregue somente texto corrido em formato .txt.
+
+  resumo_parcial: |
+    Crie um resumo parcial curto e fiel do trecho abaixo em PT-BR.
+    Preserve fatos, resultados, numeros e conclusoes importantes.
+    Entregue somente texto corrido em formato .txt.
+
+  resumo_consolidado: |
+    Combine os resumos abaixo em um unico resumo final entre 200 e 400 palavras, em PT-BR.
+    Remova repeticoes, preserve fatos importantes e entregue somente texto corrido em formato .txt.
