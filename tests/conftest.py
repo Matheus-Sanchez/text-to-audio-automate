@@ -51,8 +51,10 @@ def write_config_bundle(root: Path) -> None:
             tts:
               enabled: false
               provider: "disabled"
-              output_format: "mp3"
-              settings: {}
+              output_format: "wav"
+              settings:
+                data_dir: "data/voices"
+                voice: "pt_BR-faber-medium"
             notificacoes:
               canal_ntfy: ""
               url_ntfy: "https://ntfy.sh"

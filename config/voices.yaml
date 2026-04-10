@@ -1,7 +1,8 @@
 vozes:
   padrao:
-    provider: "disabled"
-    descricao: "Placeholder ate a escolha do TTS"
+    provider: "piper"
+    voice: "pt_BR-faber-medium"
+    descricao: "Voz PT-BR local via Piper"
   por_tipo:
     academico: "padrao"
     corporativo: "padrao"

@@ -10,7 +10,7 @@ caminhos:
   concluidos: "data/concluidos"
   falhas: "data/falhas"
   saida_audio: "data/saida_audio"
-  saida_sync: "data/saida_sync"
+  saida_sync: "C:/Users/matheus.sduda/Meu Drive/TCC (1)"
   temp: "data/temp"
   logs: "data/logs"
 
@@ -34,10 +34,14 @@ llm:
   temperatura_padrao: 0.2
 
 tts:
-  enabled: false
-  provider: "disabled"
-  output_format: "mp3"
-  settings: {}
+  enabled: true
+  provider: "piper"
+  output_format: "wav"
+  settings:
+    data_dir: "data/voices"
+    voice: "pt_BR-faber-medium"
+    chunk_chars: 1200
+    chunk_silence_ms: 350
 
 notificacoes:
   canal_ntfy: ""

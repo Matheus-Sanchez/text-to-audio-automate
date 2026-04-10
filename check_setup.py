@@ -58,6 +58,7 @@ imports = {
     "fitz": "pymupdf",
     "pymupdf4llm": "pymupdf4llm",
     "pytesseract": "pytesseract",
+    "piper": "piper-tts",
 }
 import_status: dict[str, bool] = {}
 for module_name, package_name in imports.items():
@@ -137,7 +138,20 @@ if settings is not None:
 
     print(f"\n{NEGRITO}[ TTS ]{RESET}")
     if settings.tts.enabled:
-        warn("TTS habilitado", f"provider atual: {settings.tts.provider}; adapter ainda nao implementado")
+        ok("TTS habilitado", f"provider atual: {settings.tts.provider}")
+        if settings.tts.provider.lower() == "piper":
+            data_dir = Path(str(settings.tts.settings.get("data_dir", "data/voices")))
+            if not data_dir.is_absolute():
+                data_dir = (settings.paths.base / data_dir).resolve()
+            voice_name = str(settings.tts.settings.get("voice", "")).strip()
+            voice_file = str(settings.tts.settings.get("voice_file", "")).strip()
+            model_path = Path(voice_file) if voice_file else (data_dir / f"{voice_name}.onnx" if voice_name else data_dir)
+            if not model_path.is_absolute():
+                model_path = (data_dir / model_path).resolve()
+            if model_path.exists():
+                ok("Modelo Piper", str(model_path))
+            else:
+                fail("Modelo Piper", f"nao encontrado: {model_path}")
     else:
         ok("TTS desabilitado", "comportamento esperado para este v1")
 

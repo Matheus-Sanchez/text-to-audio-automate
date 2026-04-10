@@ -268,6 +268,8 @@ class PipelineRunner:
             )
             if artifact is not None:
                 artifacts.append(artifact)
+        if artifacts:
+            self.repository.update_job(int(artifacts_dir.parent.name), stage=JobStage.TTS)
         return artifacts
 
     def _workspace_dir(self, job_id: int) -> Path:
